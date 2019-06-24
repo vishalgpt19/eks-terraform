@@ -16,19 +16,13 @@ variable "node_instance_type" {
   description = "The aws instance type for the work nodes"
 }
 
-variable "k8s-version" {
-  default     = "1.11"
-  type        = "string"
-  description = "Required K8s version"
-}
-
 variable "number_of_nodes" {
   default = 2
   type    = "string"
   description = "Number of work nodes to create"
 }
 
-variable "max-size" {
+variable "max_size" {
   default     = 5
   type        = "string"
   description = "Autoscaling maximum node capacity"

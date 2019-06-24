@@ -17,13 +17,11 @@ module "aws-vpc" {
 
 module "eks" {
   source = "./modules/eks"
-  
   cluster_name = "${var.cluster_name}"
-  k8s-version = "${var.k8s-version}"
   vpc_id = "${module.aws-vpc.vpc_id}"
   subnet_ids = "${module.aws-vpc.subnet_ids}"
   node_instance_type = "${var.node_instance_type}"
   number_of_nodes = "${var.number_of_nodes}"
-  max-size = "${var.max-size}"
-  min-size = "${var.min-size}"
+  max_size = "${var.max_size}"
+  min_size = "${var.min_size}"
 }

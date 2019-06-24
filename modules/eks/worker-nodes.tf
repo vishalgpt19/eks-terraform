@@ -6,6 +6,8 @@
 #  * AutoScaling Launch Configuration to configure worker instances
 #  * AutoScaling Group to launch worker instances
 #
+
+
 resource "aws_iam_role" "eks-node" {
   name = "eks-node"
 
@@ -152,8 +154,8 @@ resource "aws_launch_configuration" "eks" {
 resource "aws_autoscaling_group" "eks" {
   desired_capacity     = "${var.number_of_nodes}"
   launch_configuration = "${aws_launch_configuration.eks.id}"
-  max_size             = "${var.number_of_nodes}"
-  min_size             = "${var.number_of_nodes}"
+  max_size             = "${var.max_size}"
+  min_size             = "${var.min_size}"
   name                 = "eks-${var.cluster_name}-asg"
   vpc_zone_identifier  = ["${var.subnet_ids}"]
 
