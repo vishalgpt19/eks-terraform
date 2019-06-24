@@ -28,7 +28,7 @@ variable "max_size" {
   description = "Autoscaling maximum node capacity"
 }
 
-variable "min-size" {
+variable "min_size" {
   default     = 1
   type        = "string"
   description = "Autoscaling Minimum node capacity"
