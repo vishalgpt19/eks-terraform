@@ -9,16 +9,11 @@ provider "aws" {
   region = "${var.aws-region}"
 }
 
-provider "http" {
-  version = "~> 1.0"
-}
-
-provider "external" {
-  version = "~> 1.0"
-}
+provider "http" {}
 
 data "aws_region" "current" {}
 
+data "aws_availability_zones" "available" {}
 #
 # The terraform kubernetes provider does not support the 'exec' authentication provider.
 # The exec provider is required for aws, using heptio's authenticato, to retrieve a valid token.
