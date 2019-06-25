@@ -5,6 +5,10 @@
 # See workstation-ip.tf for additional information.
 #
 
+provider "aws" {
+  region = "${var.aws-region}"
+}
+
 provider "http" {
   version = "~> 1.0"
 }

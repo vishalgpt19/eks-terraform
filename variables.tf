@@ -4,6 +4,12 @@ variable "cluster_name" {
   description = "Name to give the cluster"
 }
 
+variable "aws-region" {
+  default     = "eu-west-1"
+  type        = "string"
+  description = "The AWS Region to deploy EKS"
+}
+
 variable "availability_zones" {
   type = "list"
   description = "List of az's to create the work node subets in"
@@ -38,3 +44,4 @@ variable vpc_cidr {
   type = "string"
   description = "CIDR of the VPC"
 }
+

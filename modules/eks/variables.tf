@@ -22,6 +22,12 @@ variable "number_of_nodes" {
   type    = "string"
   description = "Number of work nodes to create"
 }
+
+variable "aws-region" {
+  type        = "string"
+  description = "The AWS Region to deploy EKS"
+}
+
 variable "max_size" {}
 variable "min_size" {}
 

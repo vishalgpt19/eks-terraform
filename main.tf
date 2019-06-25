@@ -25,4 +25,5 @@ module "eks" {
   max_size = "${var.max_size}"
   min_size = "${var.min_size}"
   vpc_cidr = "${var.vpc_cidr}"
+  aws-region = "${var.aws-region}"
 }
