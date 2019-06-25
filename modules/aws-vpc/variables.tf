@@ -6,7 +6,7 @@ variable "number_of_subnets" {
 
 variable number_of_routes_tables {
   default = "2"
-  type = "String"
+  type = "string"
   description = "AWS AZs (Availability zones) where subnets should be created"
 }
 
