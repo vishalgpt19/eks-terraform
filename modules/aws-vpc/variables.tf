@@ -4,6 +4,12 @@ variable "number_of_subnets" {
   default = "2"
 }
 
+variable number_of_routes_tables {
+  default = "2"
+  type = "String"
+  description = "AWS AZs (Availability zones) where subnets should be created"
+}
+
 variable "cluster_name" {
   type    = "string"
   description = "Name to give the cluster"
@@ -19,3 +25,4 @@ variable vpc_cidr {
   type = "string"
   description = "CIDR of the VPC"
 }
+
