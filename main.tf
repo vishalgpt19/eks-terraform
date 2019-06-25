@@ -24,4 +24,5 @@ module "eks" {
   number_of_nodes = "${var.number_of_nodes}"
   max_size = "${var.max_size}"
   min_size = "${var.min_size}"
+  vpc_cidr = "${var.vpc_cidr}"
 }

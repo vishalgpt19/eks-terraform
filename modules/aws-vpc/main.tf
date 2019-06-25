@@ -1,5 +1,5 @@
 resource "aws_vpc" "eks" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "${var.vpc_cidr}"
 
   tags = "${
     map(
@@ -14,8 +14,8 @@ resource "aws_subnet" "eks" {
   count = "${var.number_of_subnets}"
 
   availability_zone = "${var.availability_zones[count.index]}" 
-  cidr_block        = "10.0.${count.index}.0/24"
-  vpc_id            = "${aws_vpc.eks.id}"
+  cidr_block = "${cidrsubnet(var.vpc_cidr, 8, count.index)}"
+  vpc_id = "${aws_vpc.eks.id}"
 
   tags = "${
     map(
