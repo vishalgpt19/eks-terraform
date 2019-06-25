@@ -25,3 +25,5 @@ variable "number_of_nodes" {
 variable "max_size" {}
 variable "min_size" {}
 
+variable "vpc_cidr" {}
+
